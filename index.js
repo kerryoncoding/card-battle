@@ -1,8 +1,14 @@
 
 
-function shuffle {
+function shuffle() {
     alert("shuffle");
-
 }
 
-start.addEventListener ("click", shuffle);
+function playCard() {
+    alert("next Card");
+}
+
+document.getElementById("start").addEventListener ("click", shuffle);
+
+
+document.getElementById("play").addEventListener ("click", playCard);
