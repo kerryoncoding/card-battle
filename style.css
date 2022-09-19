@@ -17,6 +17,10 @@ h1, h2 {
     text-align: center;
 }
 
+h3 {
+    margin-bottom: 20px;
+}
+
 .game-area {
     display: flex;
     justify-content: center;
@@ -33,7 +37,6 @@ h1, h2 {
 }
 
 .computer, .player {
-    background-color: green;
     border: 2px dotted red;
     width: 250px;
     height: 350px;
