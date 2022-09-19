@@ -21,13 +21,24 @@ function playCard() {
 
 function battle(cards) {
     console.log(cards);
+    console.log(cards.data.remaining);
+    let cardsRemaining = document.querySelector("#card-count");
+    cardsRemaining.innerHTML = cards.data.remaining;
+    
+
+
+    let computerCard= document.querySelector("#computer");
+    computerCard.innerHTML = `<img src=${cards.data.cards[0].image}>`;
+    let playerCard= document.querySelector("#player");
+    playerCard.innerHTML = `<img src=${cards.data.cards[1].image}>`;
+    
 }
 
 
 let deck_name = null;
 let remaining_cards= null;
 
-document.getElementById("start").addEventListener ("click", shuffle);
+document.getElementById("newGame").addEventListener ("click", shuffle);
 
 
 document.getElementById("play").addEventListener ("click", playCard);
