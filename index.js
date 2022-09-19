@@ -4,6 +4,7 @@ function shuffle() {
     let apiShuffle = `http://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1`;
     alert("shuffle");
     axios.get(apiShuffle).then(displayDeckId);
+    document.querySelector("#button").innerHTML=`<button class="btn btn-secondary" id="play">Play Next Card</button>`;
 };
 
 function displayDeckId(response) {
@@ -39,6 +40,5 @@ let deck_name = null;
 let remaining_cards= null;
 
 document.getElementById("newGame").addEventListener ("click", shuffle);
-
 
 document.getElementById("play").addEventListener ("click", playCard);

@@ -20,19 +20,31 @@
     </div>
     <div class="game-area">
       <div class="table">
-        <span>
-        <h3>Computer: <span>0</span></h3>
-
-        <div class="computer" id="computer"></div>
-        </span>
-        <span>
-        <h3>Player: <span>0</span></h3>
-        <div class="player" id="player"></div>
-        </span>
-        <button id="newGame">New Game</button>
-        <button id="play">Play Next Card</button>
-        <h3>Remaining Cards:<span id="card-count">52<span></h3>
+        <div class="container text-center">
+          <div class="row">
+            <div class="col-6">
+              <h3>Computer: <span>0</span></h3>
+              <div class="computer" id="computer"></div>
+            </div>
+            <div class="col-6">
+              <h3>Player: <span>0</span></h3>
+              <div class="player" id="player"></div>
+            </div>
+          </div>
+        <div class="row">
+          <div class="col" id="button">
+             <button class="btn btn-secondary" id="newGame">New Game</button>
+          </div>
+        </div>
+        <div class="row">
+          <h3>Remaining Cards:<span id="card-count">52<span></h3>
+        </div>     
+        
+      
+        
+        
       </div>
+    </div>
     </div>
     <script src="/index.js"></script>
   </body>
