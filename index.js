@@ -79,9 +79,12 @@ function battle(cards) {
                 alert("draw");
             }
         }
-        
-   
- 
+
+
+    if (cards.data.remaining === 2) {
+        alert("final play");
+    }
+
 
 }
 

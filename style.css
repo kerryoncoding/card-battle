@@ -26,18 +26,18 @@ h1, h2 {
 .table {
     text-align: center;
     background-color: green;
-    border: 1px solid black;
+    border: 1px solid white;
     border-radius: 20px;
     padding: 25px;
     max-width: 700px;
+    color: white;
 }
 
 .computer, .player {
     border: 2px dotted red;
     width: 250px;
     height: 350px;
-    padding-top: 18px;
-    
+    padding-top: 18px;    
 }
 
 .computer {
