@@ -81,12 +81,19 @@ function battle(cards) {
         }
 
 
-    if (cards.data.remaining === 2) {
+    if (cards.data.remaining < 2) {
         alert("final play");
+        if (computer_score > player_score) {
+           document.querySelector("#button").innerHTML=`<button class="btn btn-danger" id="GameOver">Game Over. Better luck next time.</button>`;
+        } else { 
+        document.querySelector("#button").innerHTML=`<button class="btn btn-danger" id="GameOver">You are the winner!</button>`;
+        }
+    } 
+        
     }
 
 
-}
+
 
 
 
@@ -96,6 +103,7 @@ let computer_value = null;
 let player_value = null;
 let computer_score = 0;
 let player_score = 0;
+let winner = null;
 
 
 document.getElementById("newGame").addEventListener ("click", shuffle);
