@@ -1,7 +1,7 @@
 
 
 function shuffle() {
-    let apiShuffle = `http://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1`;
+    let apiShuffle = `https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1`;
     alert("New deck has been shuffled");
     axios.get(apiShuffle).then(displayDeckId);
     document.querySelector("#button").innerHTML=`<button class="btn btn-secondary" id="play">Play Next Card</button>`;
@@ -16,7 +16,7 @@ function displayDeckId(response) {
 }
 
 function playCard() {
-    let apiDraw = `http://deckofcardsapi.com/api/deck/${deck_name}/draw/?count=2`;
+    let apiDraw = `https://deckofcardsapi.com/api/deck/${deck_name}/draw/?count=2`;
     axios.get(apiDraw).then(battle);
 }
 
