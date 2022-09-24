@@ -16,6 +16,12 @@ function displayDeckId(response) {
 }
 
 function playCard() {
+    if (computer_value > player_value) {
+        alert("push left"); 
+    } else { if (computer_value < player_value) {
+        alert("push right");
+     } else {alert("split");}
+}
     let apiDraw = `http://deckofcardsapi.com/api/deck/${deck_name}/draw/?count=2`;
     axios.get(apiDraw).then(battle);
 }
