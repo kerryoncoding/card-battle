@@ -16,7 +16,6 @@ function displayDeckId(response) {
 }
 
 function playCard() {
-    alert("next Card");
     let apiDraw = `http://deckofcardsapi.com/api/deck/${deck_name}/draw/?count=2`;
     axios.get(apiDraw).then(battle);
 }
@@ -30,53 +29,59 @@ function battle(cards) {
     computerCard.innerHTML = `<img src=${cards.data.cards[0].image}>`;
     let playerCard= document.querySelector("#player");
     playerCard.innerHTML = `<img src=${cards.data.cards[1].image}>`; 
- /*   console.log(cards.data.cards[0].value);
-    computer_value = cards.data.cards[0].value;
+        
+    computer_value = (cards.data.cards[0].value);
+    console.log(computer_value);
+    console.log(typeof (computer_value));
+    console.log(computer_score);
     
-    if (computer_value = "JACK") then {
-        computer_value = 11; else {
-            if (computer_value = "QUEEN") then {
-                computer_value = 12; else {
-                    if (computer_value = "KING") then {
-                        computer_value = 13; else {
-                            if (computer_value = "ACE") then {
-                        computer_value = 14;
-                        Number(computer_value);
-                        }
-                    }
-                }
-            }
-        }
-    } 
-}
-    player_value = cards.data.cards[0].value;
-    if (player_value = "JACK") then {
-        player_value = 11; else {
-            if (player_value = "QUEEN") then {
-                player_value = 12; else {
-                    if (player_value = "KING") then {
-                        player_value = 13; else {
-                            if (player_value = "ACE") then {
-                        player_value = 14;
-                        Number(player_value);
-                        }
-                    }
-                }
-            }
-        }
-    } 
-}
-
-if (computer_value > player_value) then {
-    alert("computer wins!!"); else {
-        if (computer_value < player_value) then {
-            alert("player wins!!"); else {
-                alert("battle!!!!!!!!");
-            }
-        } 
+    
+    if (computer_value === `JACK`) {
+        computer_value = "11";
     }
-}
-*/
+
+    if (computer_value === `QUEEN`) {
+        computer_value = "12";
+    }
+
+    if (computer_value === `KING`) {
+        computer_value = "13";
+    }
+     if (computer_value === `ACE`) {
+        computer_value = "14";
+    }
+
+    player_value = (cards.data.cards[1].value);
+    console.log(player_value);    
+    
+    if (player_value === `JACK`) {
+        player_value = "11";
+    }
+
+    if (player_value === `QUEEN`) {
+        player_value = "12";
+    }
+
+    if (player_value === `KING`) {
+        player_value = "13";
+    }
+     if (player_value === `ACE`) {
+        player_value = "14";
+    }
+
+    if (Number(computer_value) > Number(player_value)) {
+        computer_score = computer_score + 2;
+        document.querySelector("#computer-score").innerHTML = computer_score;} else { 
+            if (Number(computer_value) < Number(player_value)){
+            player_score = player_score + 2;
+            document.querySelector("#player-score").innerHTML = player_score;
+            } else {
+                alert("draw");
+            }
+        }
+        
+   
+ 
 
 }
 
@@ -84,8 +89,10 @@ if (computer_value > player_value) then {
 
 let deck_name = null;
 let remaining_cards= null;
-/*let computer_value = null;
+let computer_value = null;
 let player_value = null;
-*/
+let computer_score = 0;
+let player_score = 0;
+
 
 document.getElementById("newGame").addEventListener ("click", shuffle);
