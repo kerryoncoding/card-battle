@@ -86,7 +86,7 @@ function battle(cards) {
 
 
     if (cards.data.remaining < 2) {
-        alert("final play");
+      /*  alert("final play");  */
         if (computer_score > player_score) {
            document.querySelector("#button").innerHTML=`<button class="btn btn-danger" id="GameOver">Game Over. Better luck next time.</button>`;
         } else { 
