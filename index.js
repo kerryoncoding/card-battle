@@ -16,15 +16,12 @@ function displayDeckId(response) {
 }
 
 function playCard() {
-    if (computer_value > player_value) {
-        alert("push left"); 
-    } else { if (computer_value < player_value) {
-        alert("push right");
-     } else {alert("split");}
-}
     let apiDraw = `http://deckofcardsapi.com/api/deck/${deck_name}/draw/?count=2`;
     axios.get(apiDraw).then(battle);
 }
+
+
+
 
 function battle(cards) {
     console.log(cards);
@@ -82,7 +79,8 @@ function battle(cards) {
             player_score = player_score + 2;
             document.querySelector("#player-score").innerHTML = player_score;
             } else {
-                alert("draw");
+                computer_score = computer_score + 1;
+                player_score = player_score + 1;
             }
         }
 
@@ -92,9 +90,23 @@ function battle(cards) {
         if (computer_score > player_score) {
            document.querySelector("#button").innerHTML=`<button class="btn btn-danger" id="GameOver">Game Over. Better luck next time.</button>`;
         } else { 
-        document.querySelector("#button").innerHTML=`<button class="btn btn-danger" id="GameOver">You are the winner!</button>`;
+        document.querySelector("#button").innerHTML=`<button class="btn btn-warning" id="GameOver">You are the winner!</button>`;
         }
     } 
+
+/*
+function moveLeft() {
+    alert("push left");
+}
+
+function moveRight(){
+    alert("push right");
+}
+
+function split() {
+    alert("split");
+}
+*/
         
     }
 

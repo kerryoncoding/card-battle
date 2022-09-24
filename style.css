@@ -1,4 +1,5 @@
 body {
+    margin-top: 25px;
     background-color: rgb(78, 78, 78);
 }
 
@@ -36,7 +37,8 @@ h1, h2 {
 .computer, .player {
     display: block;
     margin: 0 auto;
-    border: 2px dotted red;
+    border: 2px dotted white;
+    border-radius: 15px;
     width: 250px;
     height: 350px;
     padding-top: 18px;    
