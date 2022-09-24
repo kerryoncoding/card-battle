@@ -2,7 +2,7 @@
 
 function shuffle() {
     let apiShuffle = `http://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1`;
-    alert("shuffle");
+    alert("New deck has been shuffled");
     axios.get(apiShuffle).then(displayDeckId);
     document.querySelector("#button").innerHTML=`<button class="btn btn-secondary" id="play">Play Next Card</button>`;
     document.getElementById("play").addEventListener ("click", playCard);
