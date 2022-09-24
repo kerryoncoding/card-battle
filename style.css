@@ -34,6 +34,8 @@ h1, h2 {
 }
 
 .computer, .player {
+    display: block;
+    margin: 0 auto;
     border: 2px dotted red;
     width: 250px;
     height: 350px;
