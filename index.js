@@ -29,9 +29,9 @@ function battle(cards) {
     let cardsRemaining = document.querySelector("#card-count");
     cardsRemaining.innerHTML = cards.data.remaining;
     let computerCard= document.querySelector("#computer");
-    computerCard.innerHTML = `<img src=${cards.data.cards[0].image}>`;
+    computerCard.innerHTML = `<img src=${cards.data.cards[0].image} width="75%">`;
     let playerCard= document.querySelector("#player");
-    playerCard.innerHTML = `<img src=${cards.data.cards[1].image}>`; 
+    playerCard.innerHTML = `<img src=${cards.data.cards[1].image} width="75%">`; 
         
     computer_value = (cards.data.cards[0].value);
     console.log(computer_value);
