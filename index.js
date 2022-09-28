@@ -2,11 +2,17 @@
 
 function shuffle() {
     let apiShuffle = `https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1`;
-    alert("New deck has been shuffled");
     axios.get(apiShuffle).then(displayDeckId);
-    document.querySelector("#button").innerHTML=`<button class="btn btn-secondary" id="play">Play Next Card</button>`;
+   /* shuffling(); */
+    document.querySelector("#button").innerHTML=`<button class="btn btn-secondary" id="play">Play Cards</button>`;
     document.getElementById("play").addEventListener ("click", playCard);
 };
+
+/*
+function shuffling() {
+    alert("shuffle");
+}
+*/
 
 function displayDeckId(response) {
     remaining_cards = response.data.remaining;
@@ -21,32 +27,25 @@ function playCard() {
 }
 
 
-
-
 function battle(cards) {
     console.log(cards);
     console.log(cards.data.remaining);
     let cardsRemaining = document.querySelector("#card-count");
     cardsRemaining.innerHTML = cards.data.remaining;
-    let computerCard= document.querySelector("#computer");
-    computerCard.innerHTML = `<img src=${cards.data.cards[0].image} width="75%">`;
-    let playerCard= document.querySelector("#player");
-    playerCard.innerHTML = `<img src=${cards.data.cards[1].image} width="75%">`; 
+    let computerCard= document.querySelector("#computer-card");
+    computerCard.innerHTML = `<img src=${cards.data.cards[0].image} width="75%" id="computer-card">`;
+    let playerCard= document.querySelector("#player-card");
+    playerCard.innerHTML = `<img src=${cards.data.cards[1].image} width="75%" id="player-card">`; 
+
+    
         
-    computer_value = (cards.data.cards[0].value);
-    console.log(computer_value);
-    console.log(typeof (computer_value));
-    console.log(computer_score);
-    
-    
+    computer_value = (cards.data.cards[0].value);   
     if (computer_value === `JACK`) {
         computer_value = "11";
     }
-
     if (computer_value === `QUEEN`) {
         computer_value = "12";
     }
-
     if (computer_value === `KING`) {
         computer_value = "13";
     }
@@ -54,17 +53,13 @@ function battle(cards) {
         computer_value = "14";
     }
 
-    player_value = (cards.data.cards[1].value);
-    console.log(player_value);    
-    
+    player_value = (cards.data.cards[1].value);    
     if (player_value === `JACK`) {
         player_value = "11";
     }
-
     if (player_value === `QUEEN`) {
         player_value = "12";
     }
-
     if (player_value === `KING`) {
         player_value = "13";
     }
@@ -74,13 +69,16 @@ function battle(cards) {
 
     if (Number(computer_value) > Number(player_value)) {
         computer_score = computer_score + 2;
+        /*moveLeft();*/
         document.querySelector("#computer-score").innerHTML = computer_score;} else { 
             if (Number(computer_value) < Number(player_value)){
             player_score = player_score + 2;
+            /* moveRight(); */
             document.querySelector("#player-score").innerHTML = player_score;
             } else {
                 computer_score = computer_score + 1;
                 player_score = player_score + 1;
+                /* split(); */
             }
         }
 
@@ -96,7 +94,9 @@ function battle(cards) {
 
 /*
 function moveLeft() {
-    alert("push left");
+    document.getElementById('computer-card').style.position="absolute";
+    document.getElementById('computer-card').style.left="-500";
+    
 }
 
 function moveRight(){
