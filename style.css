@@ -37,11 +37,11 @@ h1, h2 {
 .computer, .player {
     display: block;
     margin: 0 auto;
-    border: 2px dotted white;
+    border: 2px dashed white;
     border-radius: 15px;
     width: 175px;
     height: 225px;
-    padding-top: 18px;    
+    padding-top: 18px;  
 }
 
 .computer {

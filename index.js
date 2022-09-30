@@ -3,16 +3,9 @@
 function shuffle() {
     let apiShuffle = `https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1`;
     axios.get(apiShuffle).then(displayDeckId);
-   /* shuffling(); */
     document.querySelector("#button").innerHTML=`<button class="btn btn-secondary" id="play">Play Cards</button>`;
     document.getElementById("play").addEventListener ("click", playCard);
 };
-
-/*
-function shuffling() {
-    alert("shuffle");
-}
-*/
 
 function displayDeckId(response) {
     remaining_cards = response.data.remaining;
@@ -28,17 +21,15 @@ function playCard() {
 
 
 function battle(cards) {
-    console.log(cards);
-    console.log(cards.data.remaining);
+
     let cardsRemaining = document.querySelector("#card-count");
     cardsRemaining.innerHTML = cards.data.remaining;
     let computerCard= document.querySelector("#computer-card");
     computerCard.innerHTML = `<img src=${cards.data.cards[0].image} width="75%" id="computer-card">`;
     let playerCard= document.querySelector("#player-card");
-    playerCard.innerHTML = `<img src=${cards.data.cards[1].image} width="75%" id="player-card">`; 
+    playerCard.innerHTML = `<img src=${cards.data.cards[1].image} width="75%" id="player-card">`;
 
-    
-        
+            
     computer_value = (cards.data.cards[0].value);   
     if (computer_value === `JACK`) {
         computer_value = "11";
@@ -69,45 +60,36 @@ function battle(cards) {
 
     if (Number(computer_value) > Number(player_value)) {
         computer_score = computer_score + 2;
-        /*moveLeft();*/
-        document.querySelector("#computer-score").innerHTML = computer_score;} else { 
+        document.querySelector("#computer-score").innerHTML = `<span>${computer_score}</span>`;
+        document.querySelector("#player-score").innerHTML = `<span style="color:white">${player_score}</style>`;
+        playerCard.innerHTML = `<img src=${cards.data.cards[1].image} width="75%" id="player-card" style="border: 10px solid green; border-radius:10px">`;
+        
+    } else { 
             if (Number(computer_value) < Number(player_value)){
             player_score = player_score + 2;
-            /* moveRight(); */
-            document.querySelector("#player-score").innerHTML = player_score;
+            document.querySelector("#player-score").innerHTML = `<span>${player_score}</style>`;
+            document.querySelector("#computer-score").innerHTML = `<span style="color:white">${computer_score}</span>`;
+            computerCard.innerHTML = `<img src=${cards.data.cards[0].image} width="75%" id="computer-card" style="border: 10px solid green; border-radius:10px">`;
             } else {
                 computer_score = computer_score + 1;
                 player_score = player_score + 1;
-                /* split(); */
+                document.querySelector("#computer-score").innerHTML = `<span style="color:white">${computer_score}</span>`;
+                document.querySelector("#player-score").innerHTML = `<span style="color:white">${player_score}</style>`;
             }
         }
 
 
     if (cards.data.remaining < 2) {
-      /*  alert("final play");  */
         if (computer_score > player_score) {
            document.querySelector("#button").innerHTML=`<button class="btn btn-danger" id="GameOver">Game Over. Better luck next time.</button>`;
+           computerCard.innerHTML = `<img src=${cards.data.cards[0].image} width="75%" id="computer-card">`
+           playerCard.innerHTML = `<span style="font-size: 40px">Game Over<span>`;
         } else { 
         document.querySelector("#button").innerHTML=`<button class="btn btn-warning" id="GameOver">You are the winner!</button>`;
+        playerCard.innerHTML = `<img src=${cards.data.cards[1].image} width="75%" id="player-card">`;
+        computerCard.innerHTML = `<span style="font-size: 40px">Game Over<span>`
         }
-    } 
-
-/*
-function moveLeft() {
-    document.getElementById('computer-card').style.position="absolute";
-    document.getElementById('computer-card').style.left="-500";
-    
-}
-
-function moveRight(){
-    alert("push right");
-}
-
-function split() {
-    alert("split");
-}
-*/
-        
+    }         
     }
 
 
