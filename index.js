@@ -8,6 +8,7 @@ function shuffle() {
 };
 
 function displayDeckId(response) {
+    console.log(response);
     remaining_cards = response.data.remaining;
     console.log(remaining_cards);
     deck_name=response.data.deck_id;
@@ -28,7 +29,7 @@ function battle(cards) {
     computerCard.innerHTML = `<img src=${cards.data.cards[0].image} width="75%" id="computer-card">`;
     let playerCard= document.querySelector("#player-card");
     playerCard.innerHTML = `<img src=${cards.data.cards[1].image} width="75%" id="player-card">`;
-
+    console.log(computer_value);
             
     computer_value = (cards.data.cards[0].value);   
     if (computer_value === `JACK`) {
