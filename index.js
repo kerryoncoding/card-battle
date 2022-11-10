@@ -84,11 +84,15 @@ function battle(cards) {
         if (computer_score > player_score) {
            document.querySelector("#button").innerHTML=`<button class="btn btn-danger" id="GameOver">Game Over. Better luck next time.</button>`;
            computerCard.innerHTML = `<img src=${cards.data.cards[0].image} width="75%" id="computer-card">`
-           playerCard.innerHTML = `<span style="font-size: 40px">Game Over<span>`;
+           playerCard.innerHTML = `<span style="font-size: 40px">Game Over<span><div class="col" id="button">
+              <button class="btn btn-light"  onclick="location.reload();">Try Again</button>
+            </div>`;
         } else { 
         document.querySelector("#button").innerHTML=`<button class="btn btn-warning" id="GameOver">You are the winner!</button>`;
         playerCard.innerHTML = `<img src=${cards.data.cards[1].image} width="75%" id="player-card">`;
-        computerCard.innerHTML = `<span style="font-size: 40px">Game Over<span>`
+        computerCard.innerHTML = `<span style="font-size: 40px">Game Over<span><div class="col" id="button">
+              <button class="btn btn-light"  onclick="location.reload();">Play Again</button>
+            </div>`;
         }
     }         
     }
