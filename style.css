@@ -41,16 +41,10 @@ h1, h2 {
     border-radius: 15px;
     width: 175px;
     height: 225px;
-    padding-top: 18px;  
-}
-
-.computer {
+    padding-top: 18px;
     margin-bottom: 50px;
 }
 
-.player {
-    margin-bottom: 50px;
-}
 
 button {
     font-size: 20px;
@@ -66,4 +60,37 @@ footer {
 
 footer a {
     color: yellow;
+}
+
+@media screen and (max-width: 900px) {
+h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+
+.table {
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    max-width: 80%;
+}
+
+.game-area {
+    margin-top: 30px;
+}
+
+.computer,
+.player {
+    border-radius: 5px;
+    width: 85px;
+    height: 110px;
+    padding-top: 18px;
+    margin-bottom: 20px;
+}
+
+
+
 }
