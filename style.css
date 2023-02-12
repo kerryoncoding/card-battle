@@ -40,10 +40,22 @@ h3 {
     color: goldenrod;
 }
 
-.computer, .player {
+.computer-white, .player-white {
     display: block;
     margin: 0 auto;
     border: 2px dashed white;
+    border-radius: 15px;
+    width: 175px;
+    height: 225px;
+    padding-top: 10px;
+    margin-bottom: 50px;
+}
+
+.computer-win,
+.player-win {
+    display: block;
+    margin: 0 auto;
+    border: 2px solid  goldenrod;
     border-radius: 15px;
     width: 175px;
     height: 225px;

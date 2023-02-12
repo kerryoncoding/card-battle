@@ -24,9 +24,9 @@ function battle(cards) {
     let cardsRemaining = document.querySelector("#card-count");
     cardsRemaining.innerHTML = cards.data.remaining;
     let computerCard= document.querySelector("#computer-card");
-    computerCard.innerHTML = `<img src=${cards.data.cards[0].image} width="85%" id="computer-card">`;
+    computerCard.innerHTML = `<div class="computer-white" id="computer"><img src=${cards.data.cards[0].image} width="85%" id="computer-card"></div>`;
     let playerCard= document.querySelector("#player-card");
-    playerCard.innerHTML = `<img src=${cards.data.cards[1].image} width="85%" id="player-card">`;
+    playerCard.innerHTML = `<div class="player-white" id="player"><img src=${cards.data.cards[1].image} width="85%" id="player-card"></div>`;
     console.log(computer_value);
     
     computer_value = (cards.data.cards[0].value);   
@@ -59,16 +59,18 @@ function battle(cards) {
 
     if (Number(computer_value) > Number(player_value)) {
         computer_score = computer_score + 2;
-        document.querySelector("#computer-score").innerHTML = `<span style="color:goldenRod">${computer_score}</span>`;
+        document.querySelector("#computer-score").innerHTML = `<span>${computer_score}</span>`;
         document.querySelector("#player-score").innerHTML = `<span>${player_score}</style>`;
-        playerCard.innerHTML = `<img src=${cards.data.cards[1].image} width="85%" id="player-card">`;
+        computerCard.innerHTML = `<div class="computer-win" id="computer"><img src=${cards.data.cards[0].image} width="85%" id="computer-card"></div>`
+        playerCard.innerHTML = `<div class="player-white" id="player"><img src=${cards.data.cards[1].image} width="85%" id="player-card"></div>`;
         
     } else { 
             if (Number(computer_value) < Number(player_value)){
             player_score = player_score + 2;
             document.querySelector("#player-score").innerHTML = `<span>${player_score}</style>`;
             document.querySelector("#computer-score").innerHTML = `<span>${computer_score}</span>`;
-            computerCard.innerHTML = `<img src=${cards.data.cards[0].image} width="85%" id="computer-card">`;
+            playerCard.innerHTML = `<div class="player-win" id="player"><img src=${cards.data.cards[1].image} width="85%" id="player-card"></div>`;
+            computerCard.innerHTML = `<div class="computer-white" id="computer"><img src=${cards.data.cards[0].image} width="85%" id="computer-card"></div>`;
             } else {
                 computer_score = computer_score + 1;
                 player_score = player_score + 1;
