@@ -1,6 +1,6 @@
 body {
     margin-top: 25px;
-    background-color: rgb(78, 78, 78);
+    background-color: black;
 }
 
 h1 {
@@ -13,13 +13,14 @@ h2 {
     margin: 0px;
 }
 
-h1, h2 {
-    color: white;
+h1,
+h2 {
+    color: goldenrod;
     text-align: center;
 }
 
 h3 {
-    font-size: 25px;
+    font-size: 28px;
 }
 
 .game-area {
@@ -30,18 +31,33 @@ h3 {
 
 .table {
     text-align: center;
-    background-color: green;
-    border: 1px solid white;
+    background-image: url("images/table.png");
+    background-size: cover;
+    /* background-color: green; */
+    border: 1px solid goldenrod;
     border-radius: 20px;
     padding: 25px;
     max-width: 700px;
-    color: white;
+    color: goldenrod;
 }
 
-.computer, .player {
+.computer-white,
+.player-white {
     display: block;
     margin: 0 auto;
-    border: 2px dashed white;
+    border: 1px dashed white;
+    border-radius: 15px;
+    width: 175px;
+    height: 225px;
+    padding-top: 10px;
+    margin-bottom: 50px;
+}
+
+.computer-win,
+.player-win {
+    display: block;
+    margin: 0 auto;
+    border: 3px solid goldenrod;
     border-radius: 15px;
     width: 175px;
     height: 225px;
@@ -51,11 +67,17 @@ h3 {
 
 
 button {
-    font-size: 20px;
-    margin: 20px;
-    padding: 10px 20px;
-    border-radius: 4px;
-    box-shadow: 3px 3px 3px 5px  rgba(0, 0, 0, 0.2);
+    color: #016f32;
+    width: 150px;
+    background: goldenrod;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: bold;
+    border: none;
+    border-radius: 2px;
+    margin-bottom: 2px;
+    margin-top: 2px;
+    box-shadow: 3px 3px 3px 5px rgba(0, 0, 0, 0.2);
 }
 
 footer {
@@ -63,41 +85,47 @@ footer {
 }
 
 footer a {
+    color: goldenrod;
+    text-decoration: none;
+}
+
+footer a:hover {
     color: yellow;
+    text-decoration: underline;
 }
 
 @media screen and (max-width: 900px) {
-h1 {
+    h1 {
         font-size: 30px;
     }
 
-h2 {
-    font-size: 25px;
-}
+    h2 {
+        font-size: 25px;
+    }
 
-h3 {
-    font-size: 15px;
-}
+    h3 {
+        font-size: 20px;
+    }
 
-.table {
-    text-align: center;
-    border-radius: 5px;
-    padding: 5px;
-    max-width: 80%;
-}
+    .table {
+        text-align: center;
+        border-radius: 10px;
+        padding: 5px;
+        max-width: 80%;
+    }
 
-.game-area {
-    margin-top: 30px;
-}
+    .game-area {
+        margin-top: 30px;
+    }
 
-.computer,
-.player {
-    border-radius: 5px;
-    width: 100px;
-    height: 150px;
-    padding-top: 18px;
-    margin-bottom: 20px;
-}
+    .computer,
+    .player {
+        border-radius: 5px;
+        width: 100px;
+        height: 150px;
+        padding-top: 18px;
+        margin-bottom: 20px;
+    }
 
 
 
