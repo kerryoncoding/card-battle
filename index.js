@@ -60,20 +60,20 @@ function battle(cards) {
     if (Number(computer_value) > Number(player_value)) {
         computer_score = computer_score + 2;
         document.querySelector("#computer-score").innerHTML = `<span style="color:goldenRod">${computer_score}</span>`;
-        document.querySelector("#player-score").innerHTML = `<span style="color:white">${player_score}</style>`;
+        document.querySelector("#player-score").innerHTML = `<span>${player_score}</style>`;
         playerCard.innerHTML = `<img src=${cards.data.cards[1].image} width="85%" id="player-card">`;
         
     } else { 
             if (Number(computer_value) < Number(player_value)){
             player_score = player_score + 2;
             document.querySelector("#player-score").innerHTML = `<span>${player_score}</style>`;
-            document.querySelector("#computer-score").innerHTML = `<span style="color:white">${computer_score}</span>`;
+            document.querySelector("#computer-score").innerHTML = `<span>${computer_score}</span>`;
             computerCard.innerHTML = `<img src=${cards.data.cards[0].image} width="85%" id="computer-card">`;
             } else {
                 computer_score = computer_score + 1;
                 player_score = player_score + 1;
-                document.querySelector("#computer-score").innerHTML = `<span style="color:white">${computer_score}</span>`;
-                document.querySelector("#player-score").innerHTML = `<span style="color:white">${player_score}</style>`;
+                document.querySelector("#computer-score").innerHTML = `<span>${computer_score}</span>`;
+                document.querySelector("#player-score").innerHTML = `<span>${player_score}</style>`;
             }
         }
 

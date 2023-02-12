@@ -37,7 +37,7 @@ h3 {
     border-radius: 20px;
     padding: 25px;
     max-width: 700px;
-    color: white;
+    color: goldenrod;
 }
 
 .computer, .player {
@@ -53,10 +53,16 @@ h3 {
 
 
 button {
-    font-size: 20px;
-    margin: 20px;
-    padding: 10px 20px;
-    border-radius: 4px;
+    color: #016f32;
+    width: 150px;
+    background: goldenrod;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: bold;
+    border: none;
+    border-radius: 2px;
+    margin-bottom: 2px;
+    margin-top: 2px;
     box-shadow: 3px 3px 3px 5px  rgba(0, 0, 0, 0.2);
 }
 
@@ -65,7 +71,13 @@ footer {
 }
 
 footer a {
+    color: goldenrod;
+    text-decoration: none;
+}
+
+footer a:hover {
     color: yellow;
+    text-decoration: underline;
 }
 
 @media screen and (max-width: 900px) {
