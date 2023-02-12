@@ -62,8 +62,7 @@ function battle(cards) {
         document.querySelector("#computer-score").innerHTML = `<span>${computer_score}</span>`;
         document.querySelector("#player-score").innerHTML = `<span>${player_score}</style>`;
         computerCard.innerHTML = `<div class="computer-win" id="computer"><img src=${cards.data.cards[0].image} width="85%" id="computer-card"></div>`
-        playerCard.innerHTML = `<div class="player-white" id="player"><img src=${cards.data.cards[1].image} width="85%" id="player-card"></div>`;
-        
+        playerCard.innerHTML = `<div class="player-white" id="player"><img src=${cards.data.cards[1].image} width="85%" id="player-card"></div>`;  
     } else { 
             if (Number(computer_value) < Number(player_value)){
             player_score = player_score + 2;
@@ -83,23 +82,19 @@ function battle(cards) {
     if (cards.data.remaining < 2) {
         if (computer_score > player_score) {
            document.querySelector("#button").innerHTML=`<button class="btn btn-danger" id="GameOver">Game Over. Better luck next time.</button>`;
-           computerCard.innerHTML = `<img src=${cards.data.cards[0].image} width="85%" id="computer-card">`
+           computerCard.innerHTML = `<div class="computer-win" id="computer"><img src=${cards.data.cards[0].image} width="85%" id="computer-card"></div>`;
            playerCard.innerHTML = `<span style="font-size: 40px">Game Over<span><div class="col" id="button">
-              <button class="btn btn-light"  onclick="location.reload();">Try Again</button>
+              <button class="btn btn-dark"  onclick="location.reload();">Try Again</button>
             </div>`;
         } else { 
         document.querySelector("#button").innerHTML=`<button class="btn btn-warning" id="GameOver">You are the winner!</button>`;
-        playerCard.innerHTML = `<img src=${cards.data.cards[1].image} width="85%" id="player-card">`;
+        playerCard.innerHTML = `<div class="player-win" id="player"><img src=${cards.data.cards[1].image} width="85%" id="player-card"></div>`;
         computerCard.innerHTML = `<span style="font-size: 40px">Game Over<span><div class="col" id="button">
-              <button class="btn btn-light"  onclick="location.reload();">Play Again</button>
+              <button class="btn btn-dark"  onclick="location.reload();">Play Again</button>
             </div>`;
         }
     }         
     }
-
-
-
-
 
 
 let deck_name = null;
