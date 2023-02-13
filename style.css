@@ -129,7 +129,7 @@ footer a:hover {
 }
 
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 480px) {
     h1 {
         font-size: 25px;
     }
@@ -160,5 +160,25 @@ footer a:hover {
         height: 150px;
         padding-top: 18px;
         margin-bottom: 20px;
+    }
+
+    .computer-white,
+    .player-white {
+        border: 1px dashed white;
+        border-radius: 15px;
+        width: 150px;
+        height: 200px;
+        padding-top: 10px;
+        margin-bottom: 30px;
+    }
+
+    .computer-win,
+    .player-win {
+        border: 3px solid goldenrod;
+        border-radius: 15px;
+        width: 150px;
+        height: 200px;
+        padding-top: 10px;
+        margin-bottom: 30px;
     }
 }
