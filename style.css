@@ -118,14 +118,6 @@ footer a:hover {
         margin-top: 30px;
     }
 
- /*   .computer,
-    .player {
-        border-radius: 5px;
-        width: 100px;
-        height: 150px;
-        padding-top: 18px;
-        margin-bottom: 20px;
-    } */
 }
 
 
@@ -152,15 +144,6 @@ footer a:hover {
     .game-area {
         margin-top: 30px;
     }
-
-  /*  .computer,
-    .player {
-        border-radius: 5px;
-        width: 100px;
-        height: 150px;
-        padding-top: 18px;
-        margin-bottom: 20px;
-    } */
 
     .computer-white,
     .player-white {
